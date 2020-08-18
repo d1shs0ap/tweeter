@@ -1,0 +1,17 @@
+{
+    "name": "tweeter",
+    "version": "0.0",
+    "manifest_version": 2,
+    "content_scripts": [
+        {
+          "matches": ["https://twitter.com/home"],
+          "js": ["content.js"],
+          "permissions": ["http://localhost/*", "tabs"]
+        }
+      ],
+    "background": {
+      "scripts": ["background.js"],
+      "persistent": false
+    },
+    "web_accessible_resources": ["inject.js"]
+}
