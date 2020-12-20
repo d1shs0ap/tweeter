@@ -21,7 +21,7 @@ textbar.addEventListener('DOMSubtreeModified', () => {
     textbarRect = textbar.getBoundingClientRect();
     span.style.left=`${textbarRect.right}px`;
     span.style.top=`${textbarRect.bottom}px`;
-    span.textContent='';
+    span.textContent='⏳';
     clearTimeout(timer);
     timer = setTimeout(() => {
         // sends typed text to content script
@@ -47,12 +47,12 @@ window.addEventListener('getGeneratedText', (event) => {
     
 }, false);
 
-window.addEventListener("keyup", event => {
+window.addEventListener("keydown", event => {
     if(event.key=='Tab'){
         event.preventDefault();
         if(span.textContent){
             textbar.textContent += withoutSpaceSpan;
+            textbar.selectionStart = textbar.selectionEnd = textbar.value.length;
         }
     }
 })
-

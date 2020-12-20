@@ -2,8 +2,8 @@ from transformers import GPT2LMHeadModel, GPT2Tokenizer
 import torch
 
 
-tokenizer = GPT2Tokenizer.from_pretrained('gpt2')
-model = GPT2LMHeadModel.from_pretrained('gpt2')
+tokenizer = GPT2Tokenizer.from_pretrained('gpt2-xl')
+model = GPT2LMHeadModel.from_pretrained('gpt2-xl')
 
 
 def predict(text):
